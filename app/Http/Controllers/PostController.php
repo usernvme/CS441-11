@@ -50,6 +50,11 @@ class PostController extends Controller
     {
         $this->authorize('create', Post::class);
 
+        $validated = $request->validate([
+            'title' => ['required', 'max:205', 'min:5'],
+            'description' => ['required', 'max:1000']
+        ]);
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->description = $request->input('description');

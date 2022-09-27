@@ -59,7 +59,7 @@
     </article>
 
     <section class="mx-16 mt-8">
-        <form action="{{ route('posts.comments.store', ['post' => $post->id]) }}" method="post">
+        <form action="{{ route('posts.comments.store', ['post' => $post->id]) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
